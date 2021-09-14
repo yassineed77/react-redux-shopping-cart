@@ -1,20 +1,32 @@
-// feature 1
+import data from './data.json'
+import { useState, useEffect } from 'react';
+import Products from './components/products'
+
+
 function App() {
+
+  const [products, setProducts] = useState(data.products);
+  const [size, setSize] = useState('')
+  const [sort, setSort] = useState('')
+
   return (
-    <div className="App">
+    <body>
       <nav>
         <h1>React Shopping Cart</h1>
         <h1>Admin</h1>
       </nav>
 
-      <body>
-        thee body
-      </body>
+      <main>
+        <div className="main">
+          <Products products={products} />
+        </div>
+        <div className="thecart">the cart</div>
+      </main>
 
       <footer>
         <h3>footer</h3>
       </footer>
-    </div>
+    </body>
   );
 }
 
